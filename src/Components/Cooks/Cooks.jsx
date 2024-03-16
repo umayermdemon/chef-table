@@ -9,9 +9,13 @@ const Cooks = ({cooks}) => {
       <h1 className="text-2xl text-[#282828] font-medium text-center">Want to cook:{cooks.length} </h1>   
       <hr />   
       <div className="flex gap-14 ml-12 mt-4">
-          <h2>Name</h2>
-          <h2 className="pl-8">Time</h2>
-          <h2 className="pl-8">Calories</h2>
+        <table>
+            <tr>
+            <td className="pl-2">Name</td>
+            <td className="pl-14">Time</td>
+            <td className="pl-24">Calories</td>
+            </tr>
+        </table>
       </div> 
       {
         cooks.map((cook,idx)=><Cook key={idx} idx={idx} cook={cook}>
@@ -23,9 +27,13 @@ const Cooks = ({cooks}) => {
       <h1 className="text-2xl text-[#282828] font-medium text-center">Currently cooking:  </h1>   
       <hr />   
       <div className="flex gap-14 ml-12 mt-4">
-          <h2>Name</h2>
-          <h2 className="pl-8">Time</h2>
-          <h2>Calories</h2>
+      <table>
+            <tr>
+            <td className="pl-2">Name</td>
+            <td className="pl-14">Time</td>
+            <td className="pl-24">Calories</td>
+            </tr>
+      </table>
       </div> 
       </div>
 

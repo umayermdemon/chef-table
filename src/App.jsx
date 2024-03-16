@@ -1,6 +1,4 @@
-
 import { useState } from 'react'
-
 import Header from './Components/Header/Header'
 import Hero from './Components/Hero/Hero'
 import Our from './Components/Our/Our'
