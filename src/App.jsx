@@ -16,6 +16,7 @@ function App() {
   },[])
 
  const [cooks, setCooks]=useState([])
+ const [currentlyCook, setCurrentlyCook]=useState([])
  const handleWantToCook=recipe=>{
   const isExist=cooks.find(cook=>cook.id===recipe.id)
   if(!isExist){
@@ -28,17 +29,22 @@ function App() {
   
  }
  
- const handleCurrentCook=()=>{
-  console.log("cooked")
+ 
+ const handleCurrentCook=(cook)=>{
+  const newCurrenCook=cooks.filter(item=> item.id!==cook.id)
+  setCooks(newCurrenCook)
+   setCurrentlyCook([...currentlyCook, cook])
+  
  }
+ 
   return (
     <div className='max-w-7xl mx-auto mt-8 space-y-4 lg:space-y-8'>
       <Header></Header>
       <Hero></Hero>
       <Our></Our>
-      <div className='flex gap-6'>
+      <div className='flex flex-col lg:flex-row gap-6'>
         <Recipes recipes={recipes} handleWantToCook={handleWantToCook}></Recipes>
-        <Cooks  cooks={cooks}  handleCurrentCook={handleCurrentCook}></Cooks>
+        <Cooks  cooks={cooks} currentlyCook={currentlyCook}  handleCurrentCook={handleCurrentCook}></Cooks>
       </div>
       <ToastContainer />
     </div>
