@@ -28,7 +28,7 @@ const Recipe = ({ recipe,handleWantToCook }) => {
           <div className="flex justify-between">
             <div className="flex gap-2 items-center">
               <img src={time} alt=""  className="w-5"/>
-              <p className="text-[#282828CC] text-sm">{preparing_time} minutes</p>
+              <p className="text-[#282828CC] text-sm">{preparing_time}</p>
             </div>
             <div className="flex gap-2 items-center">
               <img src={caloriesImg} alt="" className="w-5"/>

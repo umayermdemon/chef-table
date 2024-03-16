@@ -1,15 +1,15 @@
-import { useEffect } from "react";
-import { useState } from "react";
+// import { useEffect } from "react";
+// import { useState } from "react";
 import Recipe from "../Recipe/Recipe";
 import PropTypes from "prop-types";
 
-const Recipes = ({handleWantToCook}) => {
-  const [recipes, setRecipes]=useState([]);
-  useEffect(()=>{
-    fetch('/public/Recipes.json')
-    .then(res=>res.json())
-    .then(data=> setRecipes(data))
-  },[])
+const Recipes = ({handleWantToCook, recipes}) => {
+  // const [recipes, setRecipes]=useState([]);
+  // useEffect(()=>{
+  //   fetch('/Recipes.json')
+  //   .then(res=>res.json())
+  //   .then(data=> setRecipes(data))
+  // },[])
   return (
     <div className="w-3/5">
       <div className="grid grid-cols-2 gap-4">
@@ -26,6 +26,7 @@ const Recipes = ({handleWantToCook}) => {
   );
 };
 Recipes.propTypes={
-  handleWantToCook: PropTypes.func.isRequired
+  handleWantToCook: PropTypes.func.isRequired, 
+  recipes: PropTypes.array.isRequired,
 }
 export default Recipes;
